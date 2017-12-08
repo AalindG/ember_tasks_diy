@@ -3,7 +3,12 @@
 <h1>Tasks</h1>
 {{#each model as |task|}}
 	<div class="well">
-		<h4>{{ task.title }}</h4>
+	<a href="#" {{action 'deleteTask' task.id}} class="btn-close" id="close">&times;</a>
+		<h4>
+			{{!-- Passing the value as task.id in the link --}}
+			{{#link-to 'tasks.edit' task.id}} {{ task.title }} {{/link-to}}
+	</h4>
+	
 		<p> <strong>{{ task.describe }}</strong></p>
 		<small> {{ task.date}} </small>
 	</div>

@@ -1,0 +1,17 @@
+<form>
+  <div class="form-group">
+    <label class="col-form-label col-md-6">Title</label>
+    {{input type="text" class="form-control" value=model.title placeholder="Add a Task.."}}
+  </div>
+  <div class="form-group">
+    <label class="col-form-label col-md-6">Due Date</label>
+    {{input type="date" class="form-control" value=model.date placeholder="mm/dd/yyyy" required=true}}
+  </div>
+  <div class="form-group">
+  	<label class="col-form-label col-md-6">Desciption</label>
+  	{{textarea type="text" class="form-control" value=model.describe placeholder="Description"}}
+  </div>
+  <div><button {{action 'editTask' model.id}} class="btn btn-primary">
+    Update
+  </button></div>
+</form>
